@@ -1,16 +1,22 @@
-<h1>食譜首頁</h1>
+<h1>Homepage</h1>
 
-<%= link_to "新增食譜", new_recipe_path %>
+<%= link_to "Add new recipe", new_recipe_path %>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+  <% end %>
 
 <table>
     <thead>
       <tr>
-        <td>名稱</td>
-        <td>要價</td>
+        <td>Title</td>
+        <td>Budget</td>
       </tr>
     </thead>
     <tbody>
-      <%= @recipes.each do |r|%>
+      <%= @recipes.each do |r| %>
       <tr>
         <td><%= r.title%></td>
         <td><%= r.money%></td>

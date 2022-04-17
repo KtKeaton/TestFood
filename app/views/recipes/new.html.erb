@@ -1,0 +1,19 @@
+<h1>Add New One</h1>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_for(@recipe) do |r| %>
+  <%= r.label :title, "Title" %>
+  <%= r.text_field :title%>
+
+  <%= r.label :money, "Budget" %>
+  <%= r.text_field :money %>
+
+  <%= r.submit %>
+<% end %>
+
+<%= link_to "Back to list", recipes_path %>
