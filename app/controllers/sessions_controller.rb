@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 			                  password: hashed_password)
 	  if user
 	    session[:random2022] = user.id
-	    redirect_to "/"
+	    redirect_to recipes_path
 	  else
 	    redirect_to "/users/sign_in", :notice => I18n.t(:user_pw_wrong)
 	  end
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 			
 private
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:name, :password, :password_confirmation, :email)
   end
 
 end
