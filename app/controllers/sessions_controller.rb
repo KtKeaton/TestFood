@@ -1,7 +1,7 @@
 require 'digest'
 
 class SessionsController < ApplicationController
-  before_action :check_login!, except: [:index, :show]
+  # before_action :check_login!, except: [:index, :show]
 
   def create
 	  pw = user_params[:password]
